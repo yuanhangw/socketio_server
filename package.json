@@ -1,9 +1,16 @@
 {
      "name": "mukhin_chat",
      "description": "example chat application with socket.io",
-     "version": "0.0.1",
+     "version": "0.0.1-9",
      "dependencies": {
-        "express": "2.4.6",
-        "socket.io": "0.9.13"
+          "express": "2.4.6",
+          "socket.io": "0.9.13"
+     },
+     "subdomain": "hidden-brook-5001",
+     "scripts": {
+          "start": "socket_server.js"
+     },
+     "engines": {
+          "node": "0.8.x"
      }
 }
