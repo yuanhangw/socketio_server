@@ -6,8 +6,8 @@ io.configure(function () {
 });
 
 io.sockets.on('connection', function (socket) {
-	socket.emit('connect', 'connect');
-  socket.on('disconnect', function () {
-    io.sockets.emit('user disconnected');
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
   });
 });
