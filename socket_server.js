@@ -6,6 +6,7 @@ io.configure(function () {
 });
 
 io.sockets.on('connection', function (socket) {
+	socket.emit('connect', 'connect');
   socket.on('disconnect', function () {
     io.sockets.emit('user disconnected');
   });
