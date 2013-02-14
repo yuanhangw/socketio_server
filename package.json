@@ -6,11 +6,4 @@
           "express": "2.4.6",
           "socket.io": "0.9.13"
      },
-     "subdomain": "hidden-brook-5001",
-     "scripts": {
-          "start": "socket_server.js"
-     },
-     "engines": {
-          "node": "0.8.x"
-     }
-}
+ }
