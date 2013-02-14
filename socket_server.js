@@ -5,9 +5,9 @@ var app = require('http').createServer(handler)
 
 
 io.configure(function () {
-  io.set("origins = *");
+  io.set("origins", "*");
   io.set("transports", ["xhr-polling"]);
-  io.set("polling duration", 100);
+  io.set("polling duration", 10);
 });
 
 var port = process.env.PORT || 5000; // Use the port that Heroku provides or default to 5000
@@ -34,7 +34,7 @@ io.sockets.on('connection', function (socket) {
   socket.emit('news', '>>>>>>server say hello to client', i);
   console.log('>>>>>>server say hello to client' +'['+i+']')
   socket.on('my other event', function (data) {
-  	socket.emit('news', i);
+  	//socket.emit('news', i);
   	i++;
   	console.log(data +'['+i+']');
   });
