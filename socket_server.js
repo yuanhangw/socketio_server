@@ -5,7 +5,7 @@ var app = require('http').createServer(handler)
 
 
 io.configure(function () {
-  io.set("origins = *");
+  io.set("origin = *");
   io.set("transports", ["xhr-polling"]);
   io.set("polling duration", 100);
 });

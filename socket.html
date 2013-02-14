@@ -1,4 +1,4 @@
-<p>bangbang</p>
+<p>babababab </p>
 <div id="host"></div>
 <div id="content">content</div>
 
@@ -6,8 +6,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
 <script>
-  var socket = new io.connect(window.location.host);
+  var socket = io.connect(window.location.hostname);
   $('#host').append(window.location.hostname);
+  $('#host').append(window.location.port);
+
   socket.on('news', function (data, index) {
     $('#content').append('<div>' + data + ' ' + index + '</div>');
     console.log(data);
