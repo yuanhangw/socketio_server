@@ -1,4 +1,5 @@
 <p>muhahahhahah </p>
+<div id="host"></div>
 <div id="content">content</div>
 
 <script src="/socket.io/socket.io.js"></script>
@@ -6,6 +7,7 @@
 
 <script>
   var socket = new io.connect(window.location.hostname);
+  $('#host').append(window.location.hostname);
   socket.on('news', function (data) {
     $('#content').append('<div>' + data +'</div>');
     console.log(data);
