@@ -6,10 +6,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
 <script>
-  var socket = new io.connect(window.location.hostname);
+  var socket = new io.connect(window.location.host);
   $('#host').append(window.location.hostname);
-  socket.on('news', function (data) {
-    $('#content').append('<div>' + data +'</div>');
+  socket.on('news', function (data, index) {
+    $('#content').append('<div>' + data + ' ' + index + '</div>');
     console.log(data);
     socket.emit('my other event', { my: 'data' });
   });
