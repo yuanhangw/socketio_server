@@ -11,7 +11,7 @@ io.configure(function () {
 
 var port = process.env.PORT || 5000; // Use the port that Heroku provides or default to 5000
 app.listen(port, function() {
-  console.log("socket server up and running");
+  console.log(">>>>>>socket server up and running on port: "+port);
 });
 
 
@@ -29,12 +29,12 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
-	console.log(">>>>>> client connected through socket");
-  socket.emit('news', '>>>>>>server say hello to client');
+	console.log(">>>>>>client connected through socket");
+  socket.emit('news', '>>>>>>server say hello to client', i);
+  console.log('>>>>>>server say hello to client' +'['+i+']')
   socket.on('my other event', function (data) {
   	socket.emit('news', i);
   	i++;
-  	console.log(data);
-    console.log(i);
+  	console.log(data +'['+i+']');
   });
 });
