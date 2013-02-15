@@ -18,7 +18,7 @@ io.sockets.on('connection', function (socket) {
 
 		socket.on('disconnect', function(){
 		// remove the username from global usernames list
-		delete usernames[socket.username];
+		delete usernames[socket.name];
 		// update list of users in chat, client-side
 		io.sockets.emit('updateusers', usernames);
 	});
