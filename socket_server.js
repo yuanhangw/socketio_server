@@ -21,6 +21,7 @@ io.sockets.on('connection', function (socket) {
 		delete usernames[socket.username];
 		// update list of users in chat, client-side
 		io.sockets.emit('updateusers', usernames);
+	});
 	
   // socket.emit('news', { hello: 'world' });
   // socket.on('my other event', function (data) {
