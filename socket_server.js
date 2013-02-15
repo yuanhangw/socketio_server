@@ -15,7 +15,13 @@ io.sockets.on('connection', function (socket) {
 		usernames[user_name] = user_name; 
 		io.sockets.emit('updateusers', usernames);
 	});
-  
+
+		socket.on('disconnect', function(){
+		// remove the username from global usernames list
+		delete usernames[socket.username];
+		// update list of users in chat, client-side
+		io.sockets.emit('updateusers', usernames);
+	
   // socket.emit('news', { hello: 'world' });
   // socket.on('my other event', function (data) {
   // 	socket.emit('news', i);
